@@ -1,0 +1,22 @@
+{
+  "name": "routepilot-password-reset",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RoutePilot disruption-aware logistics backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js",
+    "reset-all-passwords": "node reset-all-passwords.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.7"
+  }
+}

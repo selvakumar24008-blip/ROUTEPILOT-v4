@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: routepilot
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: OPERATOR_PASSWORD
+        sync: false
+      - key: DRIVER_PASSWORD
+        sync: false
+      - key: CUSTOMER_PASSWORD
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: MAPPLS_MAP_KEY
+        sync: false
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: routepilot-data
+      mountPath: /var/data
+      sizeGB: 1
